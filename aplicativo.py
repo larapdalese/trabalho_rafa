@@ -1,6 +1,7 @@
 #"A dupla deve elaborar um aplicativo que calcula o número de dias entre duas datas. O usuário pode fornecer duas formas distintas: 
 #- Através do console, utilizando o formato "18 de agosto de 2023 - 18 de setembro de 2023"
 from datetime import datetime
+import doctest
 
 def numero_de_dias_entre_datas(data1, data2):
     """
@@ -15,7 +16,12 @@ def numero_de_dias_entre_datas(data1, data2):
     -------
     diferenca : int
 
+    >>> numero_de_dias_entre_datas("23 de dezembro de 2020", "25 de dezembro de 2020")
+    2
+    >>> numero_de_dias_entre_datas("4 de janeiro de 2021", "4 de janeiro de 2022")
+    365
     """
+     
     meses = {
         'janeiro': 1, 'fevereiro': 2, 'março': 3, 'abril': 4, 'maio': 5, 'junho': 6,
         'julho': 7, 'agosto': 8, 'setembro': 9, 'outubro': 10, 'novembro': 11, 'dezembro': 12
@@ -34,15 +40,3 @@ def numero_de_dias_entre_datas(data1, data2):
     
     diferenca = abs((data_fim - data_inicio).days)
     return diferenca
-
-if __name__ == "__main__":
-
-     #Pede para que a pessoa forneça as datas
-    data_inicio = input("Primeira data: ")
-    data_fim = input("Segunda data: ")
-    #Calcula o número de dias entre datas
-    numero_dias = numero_de_dias_entre_datas(data_inicio, data_fim)
-
-    print(f'O número de dias entre é: {numero_dias} dias.')
-
-#- Através de um arquivo texto, fornecendo seu nome. O conteúdo do arquivo deve respeitar a formatação de entrada estabelecida para o console. 
