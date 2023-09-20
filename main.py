@@ -1,4 +1,8 @@
 import aplicativo as app
+import doctest
+
+if __name__ == "__main__":
+    doctest.testmod(app)
 
 tipo_de_entrada = input("Determine o tipo de entrada:\n(1) Console\n(2) Arquivo Texto\n")
 
